@@ -1,0 +1,2 @@
+api: set PORT=9292 && rake server
+web: set PORT=3000 && npm start --prefix client

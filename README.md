@@ -46,3 +46,24 @@ Get ://users at
 
 Get ://blogs at
 [http://localhost:9292/blogs](http://localhost:9292/blogs).
+
+### Frontend Setup
+
+The frontend of the application can be cloned or forke from:
+
+[frontend link]: https://github.com/monginadiana/Blog-app
+
+After you have downloaded the project run:
+
+```console
+$ npm install
+```
+... to install required dependencies to run the app. 
+
+And start the server with :
+
+```console
+$ npm start
+```
+
+NOTE: The backend server should be running inorder to interact with the frontend

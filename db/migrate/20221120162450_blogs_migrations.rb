@@ -1,4 +1,4 @@
-class Blog < ActiveRecord::Migration[6.1]
+class BlogsMigrations < ActiveRecord::Migration[6.1]
   def change
     create_table :blogs do |t|
       t.string :title
@@ -7,6 +7,6 @@ class Blog < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.integer :likes
       t.datetime :created_at
-    end    
+    end  
   end
 end

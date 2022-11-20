@@ -20,3 +20,19 @@ This is a Ruby backend app that is responsible for handling CRUD operations and 
   - full CRUD capability for one of the models
 - Separate React frontend application that interacts with the API to
   perform CRUD actions.
+
+
+## Getting Started
+
+### Backend Setup
+
+This repository has all the setup needed to get a Sinatra backend up and
+running. [**Fork and clone**][fork link] this repository to get started. Then, run
+`bundle install` to install the gems.
+
+[fork link]: https://github.com/Abzed/phase-3-sinatra-react-project
+
+You can start your server with:
+
+```console
+$ bundle exec rake server

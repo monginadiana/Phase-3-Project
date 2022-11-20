@@ -48,39 +48,39 @@ class ApplicationController < Sinatra::Base
         user.destroy
     end
 
-    get "/newsletters" do
-        news = Newsletter.all
-        news.to_json
+    get "/blogs" do
+        blogs = Blog.all
+        blogs.to_json
     end
 
 
-    get "/newsletters/:id" do
-        news = Newsletter.find(params[:id])
-        news.to_json
+    get "/blogs/:id" do
+        blogs = Blog.find(params[:id])
+        blogs.to_json
     end
 
     
 
-    post "/newsletters" do
-        news = Newsletter.create(
+    post "/blogs" do
+        blogs = Blog.create(
             title:params[:title],
             description:params[:description],
             image: params[:image],
-            user_id: params[:user_id],
+            likes: params[:likes],
         )
-        news.to_json
+        blogs.to_json
     end
 
-    patch "/newsletters/:id" do
-        news = Newsletter.find(params[:id])
+    patch "/blogs/:id" do
+        blogs = Blog.find(params[:id])
         if news
-            news.update(
+            blogs.update(
             title:params[:title],
             description:params[:description],
             image: params[:image],
             user_id: params[:user_id],
         )
-        news.to_json
+        blogs.to_json
         else
             return "news not found"
         end

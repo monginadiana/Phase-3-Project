@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
    
     
     get "/" do
-        return "Welcome to NewsApp"
+        return "Welcome to BlogsApp"
     end
 
     post "/login" do
@@ -64,26 +64,46 @@ class ApplicationController < Sinatra::Base
     post "/blogs" do
         blogs = Blog.create(
             title:params[:title],
-            description:params[:description],
+            body:params[:body],
             image: params[:image],
             likes: params[:likes],
+            user_id:params[:user_id]
         )
         blogs.to_json
     end
 
+    delete "/blogs/:id" do
+        blog = Blog.find(params[:id])
+        blog.destroy
+    end
+
     patch "/blogs/:id" do
         blogs = Blog.find(params[:id])
-        if news
+        if blogs
             blogs.update(
             title:params[:title],
-            description:params[:description],
+            body:params[:body],
             image: params[:image],
             user_id: params[:user_id],
         )
         blogs.to_json
         else
-            return "news not found"
+            return "blog not found"
         end
     end
 
+    get "/comments" do
+        comments = Comment.all
+        comments.to_json
+    end
+
+
+    post "/comments" do
+        comments = Comment.create(
+            comment:params[:comment],
+            author:params[:author],
+            
+        )
+        comments.to_json
+    end
 end

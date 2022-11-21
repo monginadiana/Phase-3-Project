@@ -1,7 +1,7 @@
 puts "🌱 Seeding data..."
 
 user1 = User.create(username: "Diana", email: "dianakgmail.com", password: "password")
-user2 = User.create(username: "Mongina" email: "diammkgmail.com", password: "1345")
+user2 = User.create(username: "Mongina", email: "diammkgmail.com", password: "1345")
 
 
 blog1 = Blog.create(title: "Corona Virus", body: "The Corona Era is over", image: "https://assets.contenthub.wolterskluwer.com/api/public/content/943905f93e58411d84eba00cf8ba718a", user_id:user1.id, likes:4)

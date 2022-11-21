@@ -31,15 +31,16 @@ class ApplicationController < Sinatra::Base
 
     post "/users" do
         user = User.create( username:params[:username], 
-            email:params[:email], password:params[:password], bio:params[:bio],
-            avatar:params[:avatar])
+            email:params[:email], 
+            password:params[:password]) 
+            
         user.to_json
     end
 
     patch "/users/:id" do
         user = User.update(username:params[:username], 
-            email:params[:email], password:params[:password], bio:params[:bio],
-            avatar:params[:avatar])
+            email:params[:email], password:params[:password])
+            
         user.to_json
     end
 
@@ -101,7 +102,8 @@ class ApplicationController < Sinatra::Base
     post "/comments" do
         comments = Comment.create(
             comment:params[:comment],
-            author:params[:author],
+            user_id:params[:user_id],
+            blog_id:params[:blog_id],
             
         )
         comments.to_json

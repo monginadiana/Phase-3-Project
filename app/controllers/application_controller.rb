@@ -82,11 +82,12 @@ class ApplicationController < Sinatra::Base
         blogs = Blog.find(params[:id])
         if blogs
             blogs.update(
-            title:params[:title],
-            body:params[:body],
-            image: params[:image],
-            user_id: params[:user_id],
-        )
+                title:params[:title],
+                body:params[:body],
+                image: params[:image],
+                likes: params[:likes],
+                user_id: params[:user_id],
+            )
         blogs.to_json
         else
             return "blog not found"
